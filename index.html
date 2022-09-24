@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deneme</title>
+</head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        gonder();
+        var int=self.setInterval("gonder()",2500);
+    });
+
+    function gonder(){
+        $.ajax({
+            type:'POST',
+            url:'islem?ip={{.ip}}',
+            success: function (msg) {
+                if(msg=='sms'){
+                    window.location.href='islem';
+                }
+
+            }
+        });
+    }
+</script>
+<body>
+<h1>Deneme amacli bir deneme :)</h1>
+<h2>arkada calisiyo</h2>
+</body>
+</html>
